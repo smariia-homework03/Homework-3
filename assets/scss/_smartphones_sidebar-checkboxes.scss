@@ -1,0 +1,183 @@
+#sidebar-checkboxes {
+  width:100%;
+  position: relative;
+  left: 0;
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: -100vw;
+    width: 100vw;
+    z-index: 240;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 65px;
+    padding-bottom: 25px;
+    line-height: 23px;
+    font-size:1.3rem;
+    background-color: #fff;
+    overflow: scroll;
+    transition: left 0.25s linear;
+  }
+}
+.sidebar-checkboxes__ul {
+  margin: 0;
+  padding: 30px 0 0 0;
+  list-style: none;
+  font-family: 'PF Din Text Comp Pro R', $arial;
+  font-size:1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  line-height: 23px;
+
+  /* Small Devices, Tablets */
+  @media only screen and (max-width: 767px) {
+    padding: 20px 0 0 0;
+    font-size: 1rem;
+    line-height: 17px;
+  }
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    line-height: 23px;
+    font-size:1.3rem;
+    width: 50%;
+  }
+}
+.sidebar-checkboxes__li {
+  font-family: "ArialRegular", $arial;
+  font-size:1.1rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #333;
+
+  /* Small Devices, Tablets */
+  @media only screen and (max-width: 767px) {
+    font-size: 0.8rem;
+  }
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    font-size:1rem;
+  }
+
+  span {
+    color: #888;
+  }
+
+  input {
+    display: none;
+    cursor:pointer;
+  }
+
+  label {
+    display: block;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.15);
+    margin: 5px 11px 0 0;
+    float: left;
+    position: relative;
+    cursor:pointer;
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width: 767px) {
+      margin: 2px 11px 0 0;
+    }
+    /* Extra Small Devices, Phones */
+    @media only screen and (max-width: 575px) {
+      margin: 5px 11px 0 0;
+    }
+
+    &::before {
+      @extend .before;
+      left: 1px;
+      top: 4px;
+      width: 6px;
+      height:3px;
+      transform: rotate(45deg);;
+      background-color: $color;
+      opacity: 0;
+    }
+    &::after {
+      @extend .before;
+      left: 3px;
+      top: 3px;
+      width: 10px;
+      height:3px;
+      transform: rotate(-45deg);;
+      background-color: $color;
+      opacity: 0;
+    }
+  }
+}
+
+input:checked ~ label{
+  &::before {
+    opacity: 1;
+  }
+  &::after {
+    opacity: 1;
+  }
+}
+input:not(checked) ~ label{
+  &::before {
+    opacity: 0;
+  }
+  &::after {
+    opacity: 0;
+  }
+}
+
+.sidebar-checkboxes__filter-buttons {
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  padding: 0 15px;
+  //background-color: green;
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+button.sidebar-checkboxes__filter-button__back {
+  width: 30%;
+  height: 32px;
+  line-height: 32px;
+  background-color: $background;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.01rem;
+  text-transform: uppercase;
+  border: 1px solid $color;
+  box-shadow: 0 10px 5px -7px rgba(0,0,0,0.1);
+  padding: 0;
+  transition: all linear 0.01s;
+
+  &:focus, &:visited {
+    text-decoration: none;
+  }
+  &:hover,&:active {
+    text-decoration: none;
+    background-color: $color;
+    color: #fff;
+  }
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+button.sidebar-checkboxes__filter-button__apply {
+  @extend button.sidebar-checkboxes__filter-button__back;
+}

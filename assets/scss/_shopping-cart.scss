@@ -1,0 +1,189 @@
+.shopping-list {
+  padding-top: 25px;
+  background-color: $background;
+  @extend .min-height-between-header-navigation-and-footer;
+}
+.shopping-list__table-title {
+  border-bottom: 2px solid #000;
+  margin: 0 15px;
+  padding: 20px 0 8px 0;
+  width: calc(100% - 30px);
+}
+.shopping-list__table-title__product-name {
+  color: #888;
+  font-size: 1.1rem;
+}
+.shopping-list__table-title__price {
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    padding-left: 7.5px;
+  }
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 479px) {
+    margin-left: -20px;
+  }
+}
+.shopping-list__ul__li {
+  position: relative;
+  margin-left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #c2c5c5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  color: $text-smartphones;
+  font-size: 1.1rem;
+  font-family: "ArialBold", $arial;
+  box-shadow: 0 0 20px 1px rgba(0,0,0,0.1);
+}
+.shopping-list__ul__li__index {
+  position: absolute;
+  top: calc(50% - 19px/2);
+  left: 20px;
+  z-index: 10;
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    left: 15px;
+  }
+}
+.shopping-list__ul__li__info {
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 479px) {
+    padding-right: 20px;
+    padding-left: 10px;
+    font-size:1rem;
+  }
+}
+.shopping-list__ul__li__price {
+  font-size: 1.3rem;
+  padding-left: 25px;
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 479px) {
+    margin-left: -20px;
+  }
+}
+
+button.delete-model-from-shopping-cart {
+  position: absolute;
+  top: calc(50% - 32px/2);
+  right: 20px;
+  z-index: 10;
+  font-family: 'PF Din Text Comp Pro M', $arial;
+  font-size:1.2rem;
+  letter-spacing: 0.07rem;
+  padding: 0 15px;
+  height:32px;
+  border-radius: 0;
+  border: 1px solid $color;
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (max-width: 1199px) {
+    font-size:1.1rem;
+  }
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    display: none;
+  }
+}
+button.delete-model-from-shopping-cart-xs {
+  display: none;
+  position: absolute;
+  top: calc(50% - 20px/2);
+  right: 20px;
+  padding: 0 5px;
+  font-size:1.5rem;
+  height:20px;
+  width: 20px;
+  line-height: 0;
+  z-index: 20;
+  background-color: #fff;
+  color: $color;
+  font-family: 'PF Din Text Comp Pro M', $arial;
+  border-radius: 50%;
+  border: 1px solid $color;
+
+  &:before {
+    @extend .before;
+    top: 4px;
+    left: 8.5px;
+    right: auto;
+    width: 1px;
+    height: 10px;
+    transform: rotate(-45deg);
+    background-color: $color;
+  }
+  &:after {
+    @extend .before;
+    top: 4px;
+    right: 8.5px;
+    left: auto;
+    width: 1px;
+    height: 10px;
+    transform: rotate(45deg);
+    background-color: $color;
+  }
+
+  &:hover, &:active, &:focus {
+    background-color: $color;
+    color: #fff;
+  }
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    display: block;
+  }
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 480px) {
+    right: 10px;
+  }
+}
+
+
+h3.shopping-list__total-price {
+
+  span {
+    color: $color;
+  }
+
+  /* Medium Devices, Desktops */
+  @media only screen and (max-width: 991px) {
+    font-size: 1.8rem;
+  }
+  /* Small Devices, Tablets */
+  @media only screen and (max-width: 767px) {
+    font-size: 1.5rem;
+  }
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    text-align: right;
+  }
+}
+.shopping-list__buttons {
+  margin: 30px 15px 50px 0;
+  width: 100%;
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    margin: 10px 15px 30px 0;
+  }
+}
+
+.shopping-list__buttons__checkout, .shopping-list__buttons__continue {
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    font-size: 1.2rem;
+  }
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 479px) {
+    font-size: 1.1rem;
+  }
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 374px) {
+    font-size: 0.9rem;
+  }
+}

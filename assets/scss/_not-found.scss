@@ -1,0 +1,30 @@
+.not-found {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  background-color: $background;
+  min-height: calc(100vh - 30px - 77px - 43px);
+
+  /* Small Devices, Tablets */
+  @media only screen and (max-width: 767px) {
+    min-height: calc(100vh - 30px - 164px - 43px);
+  }
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    min-height: calc(100vh - 30px - 296px - 43px);
+  }
+}
+
+a.not-found-a {
+  @extend button.mobile-blocks__button-other;
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+}

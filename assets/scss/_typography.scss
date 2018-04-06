@@ -1,0 +1,108 @@
+$color: #24c3e0;
+$background: #f3f6f6;
+$hover: #14b4d1;
+$text-smartphones: #555;
+$arial: "Arial", "Helvetica Neue", "Helvetica", serif;
+
+
+.before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: 'PF Din Text Comp Pro R', $arial;
+  color: #000;
+  line-height: 1.4;
+  font-size: 1rem;
+}
+p, a {
+  font-family: $arial;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing:0.15rem;
+  margin: 12px 0;
+  line-height: 1;
+}
+h3 {
+  font-size: 2rem;
+  font-family: 'PF Din Text Comp Pro M', $arial;
+  text-transform: uppercase;
+}
+h6 {
+  font-family: "ArialBold", $arial;
+}
+
+
+// Space between (header + navigation block) and footer //
+
+.min-height-between-header-navigation-and-footer {
+  min-height: calc(100vh - 30px - 117px - 77px - 43px);
+
+  /* Medium Devices, Desktops */
+  @media only screen and (max-width: 991px) {
+    min-height: calc(100vh - 30px - 107px - 77px - 43px);
+  }
+  /* Small Devices, Tablets */
+  @media only screen and (max-width: 767px) {
+    min-height: calc(100vh - 30px - 144px - 164px - 43px);
+  }
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 575px) {
+    min-height: calc(100vh - 30px - 147px - 296px - 43px);
+  }
+}
+
+
+// Buttons //
+
+.big-button {
+  padding: 10px;
+  border: 1px solid $color;
+  border-radius: 0;
+  font-family: 'PF Din Text Comp Pro R', $arial;
+  font-size:1.5rem;
+  letter-spacing:0.1rem;
+
+  /* Small Devices, Tablets */
+  @media only screen and (max-width: 767px) {
+    font-size:1.3rem;
+  }
+}
+.light-button {
+  background-color: rgba(0,0,0,0);
+  color: $color;
+
+  &:hover, &:active, &:focus {
+    background-color: $color;
+    color: #fff;
+    border: 1px solid $color;
+  }
+}
+.color-button {
+  background-color: $color;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'PF Din Text Comp Pro M', $arial;
+  letter-spacing:0.07rem;
+
+  &:hover, &:active, &:focus {
+    background-color: $hover;
+    border: 1px solid $hover;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+@keyframes checkbox-move {
+  from {left: -110vw;}
+  to {left: 0;}
+}
+
+
