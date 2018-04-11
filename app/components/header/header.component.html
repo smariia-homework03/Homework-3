@@ -1,0 +1,30 @@
+<header class="project-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-8 col-sm-9 col-12 offset-lg-4 offset-md-2">
+        <nav class="project-header__nav">
+          <ul class="project-header__nav__ul">
+            <li class="project-header__nav__ul__li"><a href="#" class="project-header__nav__ul__li__a">About us</a></li>
+            <li class="project-header__nav__ul__li"><a href="#" class="project-header__nav__ul__li__a">Shipping & Payment</a></li>
+            <li class="project-header__nav__ul__li"><a href="#" class="project-header__nav__ul__li__a">Guarantee</a></li>
+            <li class="project-header__nav__ul__li"><a href="#" class="project-header__nav__ul__li__a">Contact Us</a></li>
+            <li class="project-header__nav__ul__li"><a href="#" class="project-header__nav__ul__li__a">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-3 offset-sm-0 col-3 offset-9 align-self-end shopping">
+        <a class="shopping-cart" [routerLink]="['shopping-cart']">
+          <i class="fa fa-shopping-cart shopping-cart__mobile-icon" aria-hidden="true">
+            <span class="shopping-cart__mobile-icon__number">{{ counterInShoppingCart }}</span>
+          </i>
+          <span class="shopping-cart__items">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ counterInShoppingCart }} {{ counterWord }}
+          </span>
+          <span class="shopping-cart__sum">${{ sumInShoppingCart }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+

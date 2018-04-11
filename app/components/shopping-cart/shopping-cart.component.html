@@ -1,0 +1,33 @@
+<navigation-block></navigation-block>
+
+<section class="shopping-list">
+  <div class="container">
+    <div class="row">
+      <h1 class="col-12">Shopping list</h1>
+      <div class="shopping-list__table-title">
+        <div class="row shopping-list__table-title__product-name">
+          <span class="col-sm-8 col-9">Product name</span>
+          <span class="col-sm-4 col-3 shopping-list__table-title__price">Price</span>
+        </div>
+      </div>
+      <ul class="col-12 shopping-list__ul">
+        <li *ngFor="let shoppList of listInShoppingCart; index as shoppingIndex" class="row shopping-list__ul__li">
+          <span class="shopping-list__ul__li__index">{{ shoppingIndex + 1 }}. </span>
+          <img [src]="shoppList.photoUrl[0]" class="col-lg-2 col-sm-3 col-4 shopping-list__ul__li__img">
+          <span class="col-lg-6 col-sm-5 col-5 shopping-list__ul__li__info">{{ shoppList.brand }} {{ shoppList.name }} {{ shoppList.color }} {{ shoppList.selectedSize }}GB</span>
+          <span class="col-sm-3 col-3 shopping-list__ul__li__price">${{ shoppList.selectedPrice }}</span>
+          <button class="btn light-button delete-model-from-shopping-cart" (click)="deleteFromCart(shoppingIndex)">Delete</button>
+          <button class="btn delete-model-from-shopping-cart-xs" (click)="deleteFromCart(shoppingIndex)"></button>
+        </li>
+      </ul>
+      <h3 class="col-sm-4 offset-sm-8 col-12 shopping-list__total-price">Subtotal ({{counterInShoppingCart}}&nbsp;{{ counterWord }}): <span>${{ sumInShoppingCart }}</span></h3>
+      <div class="col-12">
+        <div class="row shopping-list__buttons">
+          <a [routerLink]="['']" class="btn big-button light-button col-md-3 col-sm-4 col-5 shopping-list__buttons__continue">Continue shopping</a>
+          <a [routerLink]="['']" class="btn big-button color-button col-md-3 offset-md-6 col-sm-4 offset-sm-4 offset-2 col-5 shopping-list__buttons__checkout">Proceed to checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

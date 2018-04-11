@@ -1,0 +1,26 @@
+<footer class="project-footer">
+  <div class="container">
+    <div class="row align-items-start project-footer__row">
+      <div class="col-xl-3 col-md-3 offset-md-0 col-sm-4 offset-sm-0 col-10 offset-1 align-self-center">
+        <img class="project-footer__logo" src="https://firebasestorage.googleapis.com/v0/b/techshop-12812.appspot.com/o/logo.jpg?alt=media&token=6d16dea6-aa57-41fc-b6cd-ba6c0aa633a1" alt="Techshop logo">
+        <small class="project-footer__logo__text">{{ (information | async)?.copyright}}</small>
+      </div>
+      <div class="col-xl-3 col-md-3 offset-md-0 col-sm-4 offset-sm-0 col-10 offset-1 project-footer__time-open">
+        <h6>We are opened</h6>
+        <p class="project-footer__time-open__text">{{ (information | async)?.openingHours.weekdays}}<br>{{ (information | async)?.openingHours.weekend}}</p>
+      </div>
+      <div class="col-xl-3 col-md-3 offset-md-0 col-sm-4 offset-sm-0 col-10 offset-1 project-footer__contact-us">
+        <h6>Contact us</h6>
+        <a href="tel:+380800300030" class="project-footer__phone-number">{{ (information | async)?.contacts.phone}}</a>
+        <span class="project-footer__email">{{ (information | async)?.contacts.email}}</span>
+      </div>
+      <div class="col-xl-3 offset-xl-0 col-md-3 offset-md-0 col-sm-4 offset-sm-4 col-10 offset-1 project-footer__social-services">
+        <h6>Social services</h6>
+        <a href="#" class="project-footer__social-service"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+        <a href="#" class="project-footer__social-service"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a>
+        <a href="#" class="project-footer__social-service"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+        <a href="#" class="project-footer__social-service"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>

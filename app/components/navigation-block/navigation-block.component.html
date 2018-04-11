@@ -1,0 +1,78 @@
+<section>
+  <div class="container">
+    <div class="row align-items-end navigation-block">
+      <div class="col-lg-2 offset-lg-2 col-md-3 offset-md-3 col-sm-5 offset-sm-4 col-6 offset-4">
+        <a href="tel:+380800300030" class="navigation-block--phone"><i class="fa fa-phone" aria-hidden="true"></i> 0 800 300 0 30</a>
+      </div>
+      <div class="col-lg-6 col-md-4 offset-md-0 col-sm-8 offset-sm-4 col-12 offset-0 navigation-block__search">
+        <form [formGroup]="form" class="input-group" (mouseover)="showUlSearch()" (mouseleave)="hideUlSearch()">
+            <span>
+                <a [routerLink]="['/search', searchSmartphone.value ]"
+                   class="btn navigation-block__search--button" (click)="hideBoth()">
+                    <i class="fa fa-search input-group-btn__i" aria-hidden="true"></i>
+                </a>
+            </span>
+          <input id="searchSmartphone"
+                 formControlName="searchSmartphone"
+                 type="text"
+                 class="form-control"
+                 autocomplete="off"
+                 (keyup)="onKeyUp($event)"
+                 (click)="resetCounter()">
+          <div id="input-group--search-value" class="input-group--search-value" (click)="setInputValue()">{{ searchValue }} </div>
+        </form>
+        <ul class="ul-search"
+            *ngIf="((counterForResults !== 0) && (mouseOnForm || mouseOnUlSearch))"
+            (mouseleave)="hideUlDropdownSearch()">
+          <li class="ul-search__li"
+              *ngFor="let smart of smartphones; index as smartIndex"
+              [style.display]="(resultsForEachSmartphone[smartIndex] === 1) ? 'block' : 'none'"
+              [class.match-search-value]="resultsForEachSmartphone[smartIndex] === 1">
+            <a [routerLink]="['/product', smart.id ]"
+               class="ul-search__li--a"
+                (click)="hideBoth()">{{ smart.brand }} {{ smart.name }} {{ smart.color }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row align-items-center navigation-block__logo-block">
+      <div class="col-md-3 col-sm-4 col-5"><a class="navigation-block__logo" [routerLink]="['']"><img src="https://firebasestorage.googleapis.com/v0/b/techshop-12812.appspot.com/o/logo.jpg?alt=media&token=6d16dea6-aa57-41fc-b6cd-ba6c0aa633a1" alt="TECHSHOP" class="navigation-block__logo--img"></a></div>
+    </div>
+    <div class="row align-items-start navigation-block__navigation-menu">
+      <ul class="col-lg-10 offset-lg-2 col-12 offset-0 navigation-menu" (mouseleave)="hideSubmenu()">
+        <li class="navigation-menu__li" (mouseover)="submenuToggle(0)" (click)="submenuToggle(0)">Mobile devices
+          <div class="navigation-submenu-container">
+            <ul class="navigation-submenu">
+              <li><a href="#" class="navigation-submenu__a">Smartphones</a></li>
+              <li><a href="#" class="navigation-submenu__a">Mobile Phones</a></li>
+              <li><a href="#" class="navigation-submenu__a">Covers and Screen Protectors</a></li>
+              <li><a href="#" class="navigation-submenu__a">Technical Accessories</a></li>
+              <li><a href="#" class="navigation-submenu__a">Earrings and Speakers</a></li>
+              <li><a href="#" class="navigation-submenu__a">Watches and Bracelets</a></li>
+              <li><a href="#" class="navigation-submenu__a">Action Cameras</a></li>
+              <li><a href="#" class="navigation-submenu__a">Gadgets for Home and Health</a></li>
+              <li><a href="#" class="navigation-submenu__a">Radio Controlled Models</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="navigation-menu__li" (mouseover)="submenuToggle(1)" (click)="submenuToggle(1)">Computers & notebooks
+          <div class="navigation-submenu-container">
+            <ul class="navigation-submenu">
+              <li><a href="#" class="navigation-submenu__a">Item 1</a></li>
+              <li><a href="#" class="navigation-submenu__a">Item 2</a></li>
+              <li><a href="#" class="navigation-submenu__a">Item 3</a></li>
+              <li><a href="#" class="navigation-submenu__a">Item 4</a></li>
+              <li><a href="#" class="navigation-submenu__a">Item 5</a></li>
+              <li><a href="#" class="navigation-submenu__a">Item 6</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="navigation-menu__li" (mouseover)="submenuToggle(2)" (click)="submenuToggle(2)">TV & audio</li>
+        <li class="navigation-menu__li" (mouseover)="submenuToggle(3)" (click)="submenuToggle(3)">photo & video Cameras</li>
+        <li class="navigation-menu__li" (mouseover)="submenuToggle(4)" (click)="submenuToggle(4)">Appliances</li>
+        <li class="navigation-menu__li" (mouseover)="submenuToggle(5)" (click)="submenuToggle(5)">Sport</li>
+      </ul>
+    </div>
+  </div>
+</section>
+

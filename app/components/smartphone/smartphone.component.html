@@ -1,0 +1,24 @@
+<div class="smartphones">
+  <div *ngFor="let smartphone of smartphones; index as smatphoneIndex" class="smartphone">
+    <div class="smartphone__slider">
+      <div id="arrow-backward" (click)="backward(smartphone)"><i class="fa fa-chevron-left fa-lg" aria-hidden="true"></i></div>
+      <div id="arrow-forward" (click)="forward(smartphone)"><i class="fa fa-chevron-right fa-lg" aria-hidden="true"></i></div>
+      <a *ngFor="let photoUrl of smartphone.photoUrl; index as i" [routerLink]="['/product', smartphone.id ]">
+        <img class="smartphone__slider--img number-{{smartphone.code}}" [ngClass]="{'smartphone__slide--active': i === 0}" [src]="photoUrl">
+      </a>
+    </div>
+    <a [routerLink]="['/product', smartphone.id ]" class="smartphone__a-model">
+      <p class="smartphone__p">{{ smartphone.brand }} {{ smartphone.name }} {{ smartphone.color }} ({{ smartphone.code }})</p>
+    </a>
+    <div class="smartphone__bottom-info">
+      <div class="btn smartphone__bottom-info__rating">
+        <i class="fa smartphone__bottom-info__star" aria-hidden="true" *ngFor="let star of ratingStars[smatphoneIndex]"
+           [class.fa-star]="star === 'full'"
+           [class.fa-star-o]="star === 'empty'"
+           [class.fa-star-half-o]="star === 'half'"></i>
+      </div>
+      <span class="smartphone__bottom-info__price">${{ smartphone.storage[3].price }}</span>
+      <button class="btn color-button smartphone__bottom-info__add-to-card" id="smartphone__bottom-info__add-to-card" (click)="addToCart(smatphoneIndex)">Add to cart</button>
+    </div>
+  </div>
+</div>

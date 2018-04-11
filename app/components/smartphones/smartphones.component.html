@@ -1,0 +1,150 @@
+<navigation-block></navigation-block>
+<section class="smartphones-background">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-0 sidebar-checkboxes" id="sidebar-checkboxes" (window:resize)="onResize()">
+        <div class="sidebar-checkboxes__filter-buttons">
+          <button class="btn sidebar-checkboxes__filter-button__back" (click)="hideCheckboxes()"><i class="fa fa-long-arrow-left fa-lg" aria-hidden="true"></i>Back</button>
+          <button class="btn sidebar-checkboxes__filter-button__apply" (click)="hideCheckboxes()">Apply</button>
+        </div>
+        <ul class="sidebar-checkboxes__ul">Brand
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="apple" checked>Apple <span>(57)</span>
+            <label for="apple"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="samsung">Samsung <span>(72)</span>
+            <label for="samsung"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="lenovo">Lenovo <span>(5)</span>
+            <label for="lenovo"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="nokia">Nokia <span>(153)</span>
+            <label for="nokia"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="philips">Philips <span>(18)</span>
+            <label for="philips"></label>
+          </li>
+        </ul>
+        <ul class="sidebar-checkboxes__ul">Price
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="0-100">$0 - $100 <span>(476)</span>
+            <label for="0-100"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="100-200">$100 - $200 <span>(74)</span>
+            <label for="100-200"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="200-300">$200 - $300 <span>(53)</span>
+            <label for="200-300"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="300-400" checked>$300 - $400 <span>(153)</span>
+            <label for="300-400"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="400-600" checked>$400 - $600 <span>(476)</span>
+            <label for="400-600"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="600-800" checked>$600 - $800 <span>(574)</span>
+            <label for="600-800"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="800-1000">$800 - $1000 <span>(53)</span>
+            <label for="800-1000"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="1000-1500">$1000 - $1500 <span>(153)</span>
+            <label for="1000-1500"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="1500-">$1500 - ... <span>(53)</span>
+            <label for="1500-"></label>
+          </li>
+        </ul>
+        <ul class="sidebar-checkboxes__ul">Color
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="white">White <span>(57)</span>
+            <label for="white"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="silver">Silver <span>(72)</span>
+            <label for="silver"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="black">Black <span>(5)</span>
+            <label for="black"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="golden" checked>Golden <span>(153)</span>
+            <label for="golden"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="pink" checked>Pink <span>(18)</span>
+            <label for="pink"></label>
+          </li>
+        </ul>
+        <ul class="sidebar-checkboxes__ul">Screen Size
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="2_3">2.3" and less <span>(8)</span>
+            <label for="2_3"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="2_4-3_9">2.4-3.9" <span>(93)</span>
+            <label for="2_4-3_9"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="4_3-4_5">4.3"-4.5" <span>(45)</span>
+            <label for="4_3-4_5"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="4_6-4_8">4.6-4.8" <span>(57)</span>
+            <label for="4_6-4_8"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="5" checked>5" <span>(34)</span>
+            <label for="5"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="5_6-5_9" checked>5.6-5.9" <span>(17)</span>
+            <label for="5_6-5_9"></label>
+          </li>
+          <li class="sidebar-checkboxes__li">
+            <input type="checkbox" id="6_0">6.0" and more <span>(4)</span>
+            <label for="6_0"></label>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-9 offset-xl-1 col-lg-9 offset-lg-0 col-md-8 offset-md-1 col-sm-8 offset-sm-0 col-12 mobile-blocks">
+        <p class="breadcrumb mobile-blocks__tags">
+          <a class="breadcrumb-item" href="#">Home</a>
+          <a class="breadcrumb-item" href="#">Mobile Devices</a>
+          <span class="breadcrumb-item active">Smartphones</span>
+        </p>
+        <h1>Smartphones</h1>
+        <p class="mobile-blocks__found">Found: {{ foundItems }} items</p>
+        <p class="mobile-blocks__sorting">
+          <span class="mobile-blocks__sorting__span">Sort by:</span>
+          <span class="mobile-blocks__sorting__span">
+            <a href="#" class="mobile-blocks__sorting__span__a">price</a>
+          </span>
+          <span class="mobile-blocks__sorting__span">
+            <a href="#" class="mobile-blocks__sorting__span__a">most popular</a>
+          </span>
+          <span class="mobile-blocks__sorting__span">
+            <a href="#" class="mobile-blocks__sorting__span__a active-for-sorting">name</a>
+          </span>
+        </p>
+        <button class="btn mobile-blocks__filter-button" (click)="showCheckboxes()">Filter</button>
+        <hr>
+        <smartphone-ang></smartphone-ang>
+        <button class="btn big-button light-button mobile-blocks__button-other ">Load other 35 items</button>
+      </div>
+    </div>
+  </div>
+</section>

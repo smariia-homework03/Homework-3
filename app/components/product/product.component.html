@@ -1,0 +1,104 @@
+<navigation-block></navigation-block>
+<section class="product" *ngIf="smartphone">
+  <div class="container">
+    <p class="breadcrumb mobile-blocks__tags">
+      <a class="breadcrumb-item" href="#">Home</a>
+      <a class="breadcrumb-item" href="#">Mobile Devices</a>
+      <a class="breadcrumb-item" [routerLink]="['']">Smartphones</a>
+      <span class="breadcrumb-item active">{{ smartphone.brand }} {{ smartphone.name }} {{ smartphone.color }} ({{ smartphone.code }})</span>
+    </p>
+    <h1 class="mobile-blocks__h1">{{ smartphone.brand }} {{ smartphone.name }} {{ smartphone.color }} ({{ smartphone.code }})</h1>
+    <div class="row">
+      <div class="col-xl-5 col-lg-6 col-md-8 col-sm-12 col-12">
+        <div class="product__slider" >
+          <div *ngFor="let oneSlide of smartphone.photoModelUrl; index as slideIndex; last as lastIndex; first as firstIndex"
+               [style.background-image]=oneSlide
+               [style.display]="(currentSlide === slideIndex) ? 'block' : 'none'"
+               class="product__slider__img">
+            <div class="product__side-controls">
+              <div class="to-back" (click)="toBack(firstIndex)"></div>
+              <div class="to-top" (click)="toTop(lastIndex)"></div>
+            </div>
+          </div>
+          <div class="product__vertical-controls">
+            <div class="vert-slides-up" (click)="moveSlidesDown()"></div>
+            <div class="vert-slides-down" (click)="moveSlidesUp()"></div>
+          </div>
+          <div class="product__img-controls">
+            <div *ngFor="let oneSlide of arrayOfSlides"
+                 [style.background-image]='(smartphone)?smartphone.photoModelUrl[oneSlide]: ""'
+                 [style.boxShadow]="(oneSlide === currentSlide ) ? '0 0 10px 4px #bbb' : 'none'"
+                 (click)="changeSlide(oneSlide)"
+                 class="product__img-controls__image">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-5 col-lg-6 col-md-4 col-sm-12 col-12 product__info-block">
+        <p>
+          <span class="product__info-block__rating-stars" (click)="showChangeRating()">
+            <i class="fa product__info-block__rating-stars__star" aria-hidden="true" *ngFor="let star of ratingStars"
+            [class.fa-star]="star === 'full'"
+            [class.fa-star-o]="star === 'empty'"
+            [class.fa-star-half-o]="star === 'half'"></i>
+            <div class="product__info-block__rating-stars--change-rating"
+                 [ngStyle]="{'opacity': popupChangeRating ? '1' : '0',
+                            'visibility': popupChangeRating ? 'visible' : 'hidden'}">
+              <div class="change-rating--container">
+                <h3>Set your rating:</h3>
+                <i class="fa fa-star fa-2x" aria-hidden="true" (click)="onChangeRating(smartphone, 1)"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true" (click)="onChangeRating(smartphone, 2)"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true" (click)="onChangeRating(smartphone, 3)"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true" (click)="onChangeRating(smartphone, 4)"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true" (click)="onChangeRating(smartphone, 5)"></i>
+                <div class="change-rating--close" (click)="hideChangeRating()">x</div>
+              </div>
+            </div>
+
+          </span>
+          <span class="product__info-block__rating-number">
+            <i>({{ smartphone.ratingNumber }})</i>
+          </span>
+          <span [hidden]='smartphone.stock === true' class="product__info-block__stock"><i class="fa fa-check" aria-hidden="true"></i> Not on stock</span>
+          <span [hidden]='smartphone.stock === false' class="product__info-block__stock"><i class="fa fa-check" aria-hidden="true"></i> On stock</span>
+        </p>
+        <article class="product__info-block__text">{{ smartphone.description }}</article>
+        <div class="product__info-block__form">
+          <div class="product__info-block__form__select-storage-size">
+            Storage size<br>
+            <div class="product-select" (mouseover)="showUlStorage()" (mouseleave)="hideUlStorage()">
+              <li class="first-select" id="first-select">{{ selectedSize }}GB</li>
+              <ul class="product-select__ul" [style.display]="mousoverUl == true ? 'block' : 'none'">
+                <li *ngFor="let storage of smartphone.storage; index as storageIndex" class="second-select" (click)="changeStorageSize(storageIndex)">
+                  {{ storage.size }}GB
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="product__info-block__form__select-color">
+            Color<br>
+            <div class="product-select color-select">
+              <li class="first-select">{{ smartphone.color }}</li>
+            </div>
+          </div>
+          <span class="product__info-block__form__price">${{ selectedPrice }}</span>
+          <button class="btn big-button color-button product__info-block__form__submit" (click)="addToCart()">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-12 col-md-12 col-sm-12 col-12 product__sidebar">
+        <div class="product__sidebar__item">
+          <h3><i class="fa fa-car product__sidebar__item__title" aria-hidden="true"></i>Delivery</h3>
+          <p class="product__sidebar__item__text">Free delivery for orders starting from $300 (in Kiev and the surrounding area)</p>
+        </div>
+        <div class="product__sidebar__item">
+          <h3><i class="fa fa-shopping-bag product__sidebar__item__title" aria-hidden="true"></i>Pickup</h3>
+          <p class="product__sidebar__item__text">Pickup form the shop or from the Delivery Service office is available.</p>
+        </div>
+        <div class="product__sidebar__item">
+          <h3><i class="fa fa-refresh product__sidebar__item__title" aria-hidden="true"></i>Refund</h3>
+          <p class="product__sidebar__item__text">If any damages or other issues, the product can be returned within 14 days free of charge</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
